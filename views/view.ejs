@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+    <% include partials/scripts.ejs %>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid primary white">
+        <div class="container text-center">
+            <h1 class="display-4">
+                View Info
+            </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+       
+            <div class="form-group">
+                <label>Title :</label>
+                <%= disease.title %>
+            </div>
+
+            <div class="form-group">
+                <label>Health Issue : </label>
+                <%= disease.healthissue %>
+            </div>
+
+            <div class="form-group">
+                <label>Response to medications : </label>
+                <%= disease.response %>
+            </div>
+
+            <div class="form-group">
+                <label>Consulting Doctor : </label>
+                <%= disease.doctor %>
+            </div>
+
+            <div class="form-group">
+                <label>Medications Used : </label>
+                <%= disease.medications %>
+            </div>
+
+            <div class="form-group">
+                <label>Hospital Info : </label>
+                <%= disease.hospital %>
+            </div>
+
+            <div class="form-group">
+                <label>Tests : </label>
+                <%= disease.tests %>
+            </div>
+
+            <div class="form-group">
+                <label>Treatment : </label>
+                <%= disease.treatment %>
+            </div>
+
+            <div class="form-group">
+                <label>Status : </label>
+                <%= disease.status %>
+            </div>
+
+            <a href="/<%= disease.id %>/edit" class="btn btn-link">Edit</a>
+         
+    </div>
+</body>
+
+</html>

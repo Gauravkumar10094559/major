@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome</title>
+  <% include partials/scripts.ejs %>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid primary white">
+    <div class="container text-center">
+      <h1 class="display-2">
+        Welcome, <%= user.username %>
+      </h1>
+      <a class="btn secondary white btn-lg" href="/logout">Logout</a>
+    </div>
+
+    <form action="/users/update" method="post">
+        <h2>
+                Personal Details:
+        </h2>
+        <div class="container">
+                <label>Full Name:</label> 
+                    <input type="text" name="name"><br>
+                <label>Mobile No:</label>
+                    <input type="tel" name="mobile"><br>
+                <label>Date of birth:</label>
+                    <input type="date" name="dateofbirth"><br>
+                <label>Address:</label>
+                    <input type="text" name="address"><br>
+                <label>Patient Id:</label> 
+                    <p name="id"><%=user.id%></p><br>
+                <label>Sex:</label>
+                    <input type="text" name="sex"><br>
+                <label>Emergency Contact:</label>
+                    <input type="tel" name="emergency"><br>
+        </div>
+        <h2>
+                Health Details:
+        </h2>
+        <div class="container">
+                <label>Blood Group:</label> 
+                    <input type="text" name="bloodgroup"><br>
+                <label>List of Allergies('NKA' if not known):</label>
+                    <textarea type="text" name="allergies"></textarea><br>
+                <label>BMI:</label>
+                    <input type="text" name="bmi"><br>
+                <label>Significant Accidents:</label>
+                    <textarea type="text" name="accidents"></textarea><br>
+                <label>Medical History:</label>
+                    <textarea type="text" name="history"></textarea><br>
+        </div>
+
+        <input type="submit" value="Submit">
+      </form>
+
+
+
+
+  </div>
+
+ 
+</body>
+</html>

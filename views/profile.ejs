@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome</title>
+  <% include partials/scripts.ejs %>
+</head>
+<body>
+
+
+  <div class="jumbotron jumbotron-fluid primary white">
+    <div class="container text-center">
+      <h1 class="display-2">
+        Welcome, <%= user.username %>
+      </h1>
+
+      <a class="btn secondary white btn-lg" href="/network/add">Add data to the blockchain</a>
+
+      <a class="btn secondary white btn-lg" href="/logout">Logout</a>
+      <a class="btn secondary white btn-lg" href="/">Home</a>
+    </div>
+    <h2>
+        Personal Details:
+    </h2>
+    <div class="container">
+      <label>Full Name:</label> 
+        <% if(user) { %>
+          <%= user.username %>
+        <% } else { %>
+          <%= "-" %>
+        <% } %>
+      </br>
+      <label>Mobile No:</label>
+          <%= user.mobileno %>
+      </br>
+      <label>Date of birth:</label>
+      <%= user.dateofbirth %>
+      </br> 
+      <label>Address:</label>
+      <%= user.address %>
+      </br>
+      <label>Patient Id:</label> <%= user.id %>
+      </br>
+      <label>Sex:</label>
+      <%= user.sex %>
+      </br>
+      <label>Emergency Contact:</label>
+      <%= user.emergency %>
+      </br>
+    </div>
+    <h2>
+        Health Details:
+    </h2>
+    <div class="container">
+      <label>Blood Group:</label>
+      <%= user.bloodgroup %> 
+      </br>
+      <label>List of Allergies('NKA' if not known):</label>
+      <%= user.allergies %>
+      </br>
+      <label>BMI:</label>
+      <%= user.bmi %>
+      </br>
+      <label>Significant Accidents:</label>
+      <%= user.accidents %>
+      </br>
+      <label>Medical History:</label>
+      <%= user.history %>
+      </br>
+    </div>
+    <a class="btn secondary white btn-lg" href="/update">Update</a></br>
+
+    <a class="btn secondary white btn-lg" href="/disease">Add a disease</a>
+
+    add a loop to go through all the disease and show the title card here
+    
+    <h2>Diseases:</h2>
+
+    <div> 
+
+      <% if(user.diseases.length>=1) { %>
+        <% user.diseases.forEach(function(disease) { %>
+          <div class="container">
+              <p>********************************************</p>
+              <p> <%= disease.title %> </p>
+              <a class="btn secondary white btn-lg" href="/<%= disease.title %>/view">View</a></br>
+
+              <!-- <p> <%= disease.healthissue %> </p>
+              <p> <%= disease.response %> </p>
+              <p> <%= disease.doctor %> </p>
+              <p> <%= disease.medications %> </p>
+              <p> <%= disease.hospital %> </p>
+              <p> <%= disease.tests %> </p>
+              <p> <%= disease.treatment %> </p>
+              <p> <%= disease.status %> </p> -->
+              <p>********************************************</p>
+          </div>
+        <% }) %>
+      <% }else { %>
+        <p>No diseases added yet</p>
+      <% } %>
+
+    </div>
+
+  </div>
+
+ 
+</body>
+</html>
