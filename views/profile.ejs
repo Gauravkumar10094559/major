@@ -16,10 +16,16 @@
         Welcome, <%= user.username %>
       </h1>
 
+      <h6>
+        Secret key : <%= user.secretkey %>
+      </h6>
+
       <a class="btn secondary white btn-lg" href="/network/add">Add data to the blockchain</a>
 
       <a class="btn secondary white btn-lg" href="/logout">Logout</a>
       <a class="btn secondary white btn-lg" href="/">Home</a>
+      <a class="btn secondary white btn-lg" href="/network/verify">Verify</a>
+      
     </div>
     <h2>
         Personal Details:

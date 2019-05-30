@@ -86,7 +86,7 @@ router.post('/update',loggedin, function(req, res, next) {
 
   var query = {'username':req.user.username};
   User.findOneAndUpdate(query, newBody, {upsert:true,new:true}, function(err, doc){
-      if (err) return res.send(500, { error: err });
+      if (err) return res.status(500).send({ error: err });
       res.render('profile',{
         user:doc
       });
